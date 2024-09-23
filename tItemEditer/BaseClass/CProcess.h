@@ -17,7 +17,8 @@ public:
     ~CProcess();
 
     bool initByPid(DWORD pid);
-    void closeHandle(){if(m_hProcess!=nullptr){CloseHandle(m_hProcess);}}
+    bool isInited(){return m_hProcess!=nullptr;}
+    void closeHandle(){if(m_hProcess!=nullptr){CloseHandle(m_hProcess);m_hProcess=nullptr;}}
     QString getProcessName(){return m_pname;}
 
     static QString getProcessNameByPid(DWORD pid);

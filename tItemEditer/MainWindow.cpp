@@ -29,6 +29,7 @@ void MainWindow::on_pbtnConfirm_clicked()
 {
     uint pid = ui->ledPid->text().toUInt();
     CProcess process(pid);
-    qDebug() << process.getProcessName();
+    if(process.isInited())
+        qDebug() << process.getProcessName();
 }
 

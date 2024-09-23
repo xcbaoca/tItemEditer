@@ -5,7 +5,6 @@ CProcess::CProcess(uint pid,QObject *parent)
     : QObject{parent}
 {
     m_hProcess = nullptr;
-
     initByPid(pid);
 }
 
@@ -18,7 +17,7 @@ bool CProcess::initByPid(DWORD pid){
     closeHandle();
     QString processName = "";
 
-    HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
+    HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS|PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
     if(hProcess == nullptr){return false;}
 
     HMODULE hMod;
@@ -41,8 +40,6 @@ bool CProcess::initByPid(DWORD pid){
     if (!IsWow64Process(hProcess, &isWow32)) {
         return false;
     }
-    QString temp = isWow32?"32":"64";
-    qDebug() << temp;
     m_pname = processName;
     m_pid = pid;
     m_isWow32 = isWow32;
