@@ -25,10 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        BaseClass/CProcess.cpp \
         main.cpp \
         MainWindow.cpp
 
 HEADERS += \
+        BaseClass/CProcess.h \
         MainWindow.h
 
 FORMS += \
