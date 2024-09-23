@@ -52,3 +52,10 @@ compile_commands.json
 *creator.user*
 
 *_qmlcache.qrc
+
+#self_defined:
+build/
+release/
+debug/
+.qtc_clangd/
+.qmake.stash
