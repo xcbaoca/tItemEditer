@@ -59,3 +59,59 @@ release/
 debug/
 .qtc_clangd/
 .qmake.stash
+
+
+#C#:
+# Visual Studio相关文件
+.vs/
+*.sln.ide
+*.sln.docstates
+
+# 编译输出
+bin/
+obj/
+*.exe
+*.dll
+*.pdb
+*.appx
+*.appxbundle
+*.appxupload
+
+# NuGet包
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+# Visual Studio Code相关文件
+.vscode/
+
+# Rider相关文件
+.idea/
+
+# 生成的文件
+*.user
+*.suo
+*.userprefs
+*.sln.cache
+
+# 其他不需要的文件
+*.log
+*.tmp
+*.cache
+*.zip
+*.rar
+*.tar.gz
+*.tar
+
+# 个人设置文件
+*.dbmdl
+*.dbproj.schemaview
+*.dbproj
+
+# 其他
+*.class
+*.jar
+*.war
+*.swp
+*.bak
