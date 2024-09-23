@@ -9,9 +9,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
 #if defined(QT_ARCH_X86_64) || defined(Q_OS_WIN64)
-    QMessageBox::information(nullptr, "信息", "当前是64位程序");
+    QMessageBox::information(nullptr, tr("message"), tr("It is currently a 64-bit program"));
 #else
-    QMessageBox::information(nullptr, "信息", "当前是32位程序");
+    QMessageBox::information(nullptr, tr("message"), tr("It is currently a 32-bit program"));
 #endif
 
 }
