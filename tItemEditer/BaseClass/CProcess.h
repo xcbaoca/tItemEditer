@@ -12,6 +12,8 @@ private:
     QString m_pname;//进程名
     HANDLE m_hProcess;//进程句柄
     bool m_isWow32;//是否位32位进程
+
+    void*getTargetAddr(void*baseAddr,QList<uint>offsets);
 public:
     explicit CProcess(uint pid,QObject *parent = nullptr);
     ~CProcess();
@@ -22,6 +24,9 @@ public:
     QString getProcessName(){return m_pname;}
 
     static QString getProcessNameByPid(DWORD pid);
+
+    void readData(void*baseAddr,QList<uint>offsets);
+    bool writeData(void*baseAddr,QList<uint>offsets,size_t writeSize,void*p_value);
 
 signals:
 };
