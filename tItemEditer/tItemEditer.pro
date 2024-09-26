@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui sql webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -25,16 +25,23 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+        BaseClass/CItem.cpp \
         BaseClass/CProcess.cpp \
+        BaseClass/xGloab.cpp \
+        dialogs/dlgWebWidget.cpp \
         main.cpp \
         MainWindow.cpp
 
 HEADERS += \
+        BaseClass/CItem.h \
         BaseClass/CProcess.h \
-        MainWindow.h
+        BaseClass/xGloab.h \
+        MainWindow.h \
+        dialogs/dlgWebWidget.h
 
 FORMS += \
-        MainWindow.ui
+        MainWindow.ui \
+        dialogs/dlgWebWidget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

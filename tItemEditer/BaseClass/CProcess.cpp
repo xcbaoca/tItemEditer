@@ -82,7 +82,6 @@ bool CProcess::initByPid(DWORD pid){
     return true;
 }
 
-
 QString CProcess::getProcessNameByPid(DWORD pid)
 {
     QString processName = "";
